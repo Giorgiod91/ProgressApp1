@@ -1,6 +1,6 @@
 import React from "react";
 
-type Props = {};
+interface Props {}
 
 function Footer({}: Props) {
   return (

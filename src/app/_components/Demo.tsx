@@ -1,7 +1,6 @@
 import React from "react";
 
-type Props = {};
-
+interface Props {}
 function Demo({}: Props) {
   return (
     <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-16 space-x-6 px-6 pb-10 pt-24 sm:px-8 sm:pt-28 lg:flex-row lg:gap-20 lg:pb-20">

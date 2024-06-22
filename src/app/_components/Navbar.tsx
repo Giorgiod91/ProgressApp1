@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { getServerAuthSession } from "~/server/auth";
 
-type Props = {};
+interface Props {}
 
 export default async function Navbar({}: Props) {
   const session = await getServerAuthSession();

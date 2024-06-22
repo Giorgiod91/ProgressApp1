@@ -1,6 +1,6 @@
 import React from "react";
 
-type Props = {};
+interface Props {}
 
 function Banner2({}: Props) {
   return (
@@ -11,7 +11,7 @@ function Banner2({}: Props) {
             Track, Improve, Succeed
           </span>
         </div>
-        <div className="bg-neutral hidden aspect-square max-md:w-full md:order-first md:h-[28rem]"></div>
+        <div className="hidden aspect-square bg-neutral max-md:w-full md:order-first md:h-[28rem]"></div>
       </div>
     </div>
   );

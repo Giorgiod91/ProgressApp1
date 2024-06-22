@@ -2,7 +2,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 
-type Props = {};
+interface Props {}
 
 function Banner1({}: Props) {
   return (
@@ -19,7 +19,7 @@ function Banner1({}: Props) {
             />
           </span>
         </div>
-        <div className="bg-neutral hidden aspect-square max-md:w-full md:order-first md:h-[28rem]"></div>
+        <div className="hidden aspect-square bg-neutral max-md:w-full md:order-first md:h-[28rem]"></div>
       </div>
     </div>
   );

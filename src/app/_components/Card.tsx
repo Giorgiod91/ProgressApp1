@@ -1,5 +1,5 @@
-"use client";
 import React, { useEffect, useState } from "react";
+import Typewriter from "typewriter-effect";
 import confetti from "canvas-confetti";
 import { motion } from "framer-motion";
 
@@ -11,58 +11,46 @@ function Card({ initialTask = "Task" }: Props) {
   const triggerConfetti = () => {
     confetti();
   };
-  // state to track the task the user wants to complete
-  const [task, setTask] = useState(initialTask);
 
-  // state to increase the number of workouts completed
+  const [task, setTask] = useState(initialTask);
   const [workoutsCompleted, setWorkoutsCompleted] = useState(0);
-  // variables to store the number of workouts completed
-  const workoutsAbsolved = 0;
-  // State to track when all 3 workouts are completed
   const [allWorkoutsCompleted, setAllWorkoutsCompleted] = useState(false);
 
-  // State to track whether each button is clicked
   const [button1Clicked, setButton1Clicked] = useState(false);
   const [button2Clicked, setButton2Clicked] = useState(false);
   const [button3Clicked, setButton3Clicked] = useState(false);
 
-  // State to track whether each button is disabled
   const [button1Disabled, setButton1Disabled] = useState(false);
   const [button2Disabled, setButton2Disabled] = useState(false);
   const [button3Disabled, setButton3Disabled] = useState(false);
+
   const handleClickButton1 = () => {
     setButton1Clicked(true);
     triggerConfetti();
-
     setWorkoutsCompleted(workoutsCompleted + 33);
-
     setButton1Disabled(true);
   };
 
   const handleClickButton2 = () => {
     setButton2Clicked(true);
     triggerConfetti();
-
     setWorkoutsCompleted(workoutsCompleted + 33);
-    setButton2Disabled(true); // Disable button after it's clicked
+    setButton2Disabled(true);
   };
 
   const handleClickButton3 = () => {
     setButton3Clicked(true);
     triggerConfetti();
-
     setWorkoutsCompleted(workoutsCompleted + 33);
-    setButton3Disabled(true); // Disable button after it's clicked
+    setButton3Disabled(true);
   };
-  // function to check if all workouts are completed wihen useEffect it created an infinite loop
+
   useEffect(() => {
-    // function to check if all workouts are completed
     if (workoutsCompleted === 99) {
       setAllWorkoutsCompleted(true);
     }
   }, [workoutsCompleted]);
 
-  // function to se the input to the task i declared in top of the file
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTask(event.target.value);
   };
@@ -104,7 +92,6 @@ function Card({ initialTask = "Task" }: Props) {
       <motion.div variants={item} className="card-body">
         <h2 className="card-title">Track Your Progress</h2>
         <input type="text" value={task} onChange={handleInputChange} />
-
         <p>Click and mark parts as complete</p>
         <progress
           className="progress progress-error w-56"
@@ -119,7 +106,7 @@ function Card({ initialTask = "Task" }: Props) {
           </div>
         )}
 
-        <div className="card-actions justify-end space-x-2 ">
+        <div className="card-actions justify-end space-x-2">
           <button
             onClick={handleClickButton1}
             disabled={button1Disabled}
