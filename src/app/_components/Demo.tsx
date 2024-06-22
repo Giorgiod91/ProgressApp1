@@ -1,5 +1,4 @@
 import React from "react";
-import video from "../../../public/demo.mp4";
 
 type Props = {};
 
