@@ -16,7 +16,7 @@ export const plans = [
         : "",
     price: 5.99,
     name: "Basic",
-    access: " 1 year access",
+    access: " ✔️ 1 year access",
   },
 
   {
@@ -36,18 +36,20 @@ export const plans = [
 //${plan.price}
 function Payment() {
   return (
-    <div className="mx-auto flex max-w-screen-2xl  justify-between gap-16 space-x-6 px-6 pb-10 pt-24 sm:px-8 sm:pt-28 lg:flex-col lg:gap-20 lg:pb-20">
-      <h1 className="text-5xl font-extrabold tracking-tight text-slate-100 md:-mb-4 lg:text-6xl xl:text-7xl">
-        Unlock Your Potential with Our Premium Plans
-      </h1>
-      <div className="flex flex-row items-center justify-center gap-4">
+    <div className="mx-auto max-w-7xl px-8 py-24">
+      <div className="mb-20 flex w-full flex-col  text-center">
+        <h1 className="mb-8 text-5xl font-extrabold tracking-tight text-slate-100 md:-mb-4 lg:text-6xl xl:text-7xl">
+          Unlock Your Potential with Our Premium Plans
+        </h1>
+      </div>
+      <div className="relative flex flex-col items-center justify-center gap-8 lg:flex-row">
         {plans.map((plan) => (
           <div
             key={plan.priceId}
-            className={`relative flex flex-col items-center gap-4 rounded-lg border p-4 shadow-lg ${
+            className={`relative z-10 flex flex-col gap-5 rounded-lg bg-base-100 p-8 lg:gap-8 ${
               plan.name === "Pro"
-                ? "border-red-500 bg-gradient-to-r from-red-500 to-pink-400"
-                : "border-white bg-gradient-to-r from-blue-500 to-cyan-400"
+                ? "border-white bg-gradient-to-r from-red-500 to-pink-400"
+                : "border-black bg-gradient-to-r from-blue-500 to-cyan-400"
             }`}
           >
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 transform rounded-lg bg-white px-2 py-1 text-black shadow-lg">

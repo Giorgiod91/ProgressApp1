@@ -7,7 +7,7 @@ interface Props {}
 export default async function Navbar({}: Props) {
   const session = await getServerAuthSession();
   return (
-    <div className="navbar bg-gradient-to-r from-white to-slate-200">
+    <div className="navbar mx-auto max-w-screen-2xl">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,49 +31,48 @@ export default async function Navbar({}: Props) {
             className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
           >
             <li>
-              <a>Item 1</a>
+              <a href="#demo">Demo</a>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <a href="#payment">Pricing</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>about</a>
             </li>
           </ul>
         </div>
         <img className="w-12" src="./logo2.jpg" alt="logo" />
-        <a className="btn btn-ghost text-xl text-primary">PrOgreSS</a>
+        <a className="btn btn-ghost text-xl tracking-tight text-transparent">
+          <span className="flex">
+            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text">
+              PrOgre
+            </span>
+            <span className="text-white">SS</span>
+          </span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a href="#demo" className="text-primary">
-              features
+            <a href="#demo" className="link-hover link">
+              Features
             </a>
           </li>
           <li></li>
           <li>
-            <a href="#payment" className="text-primary">
+            <a href="#payment" className="link-hover link">
               Pricing
             </a>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <p className="text-center text-2xl text-white">
+        <p className="text-center text-2xl text-gray-800">
           {session && <span>Logged in as {session.user?.name}</span>}
         </p>
         <Link
           href={session ? "/api/auth/signout" : "/api/auth/signin"}
-          className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
+          className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black"
         >
           {session ? "Sign out" : "Sign in"}
         </Link>

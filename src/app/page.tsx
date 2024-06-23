@@ -34,16 +34,20 @@ export default async function Home() {
         <Motivate1 />
       </section>
       <Banner2 />
-      <section id="demo">
+      <section className=" " id="demo">
         <Demo />
       </section>
       <section
         data-theme="light"
         className=" flex h-screen w-full justify-center"
       >
+        {" "}
         <Test1 />
       </section>
-      <section id="payment" className="h-screen">
+      <section
+        id="payment"
+        className="flex min-h-screen items-center justify-center"
+      >
         <Payment />
       </section>
       <Footer />
