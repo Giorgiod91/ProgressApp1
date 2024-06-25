@@ -1,8 +1,6 @@
 import React from "react";
 
-interface Props {}
-
-function Motivate1({}: Props) {
+function Motivate1() {
   return (
     <div className="flex flex-col items-center justify-center space-y-10">
       <h1 className="border-b-8 border-dashed border-primary p-5 text-5xl font-extrabold tracking-tight  text-slate-100 md:-mb-4 lg:text-6xl xl:text-7xl">

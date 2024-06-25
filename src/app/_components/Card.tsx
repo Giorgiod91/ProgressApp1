@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Typewriter from "typewriter-effect";
 import confetti from "canvas-confetti";
 import { motion } from "framer-motion";
 

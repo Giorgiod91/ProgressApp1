@@ -2,9 +2,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 
-interface Props {}
-
-function Banner1({}: Props) {
+function Banner1() {
   return (
     <div className="via-magenta-500 max-h[13rem] top-40 flex bg-gradient-to-r from-white to-sky-400">
       <div className="mx-auto flex min-h-[13rem] max-w-3xl flex-col justify-center gap-12 md:flex-row md:items-center md:justify-start">

@@ -21,7 +21,6 @@ export const taskRouter = createTRPCRouter({
         },
       });
     }),
-
   update: protectedProcedure
     .input(
       z.object({

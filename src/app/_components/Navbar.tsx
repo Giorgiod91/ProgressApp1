@@ -2,9 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { getServerAuthSession } from "~/server/auth";
 
-interface Props {}
-
-export default async function Navbar({}: Props) {
+export default async function Navbar() {
   const session = await getServerAuthSession();
   return (
     <div className="navbar mx-auto max-w-screen-2xl">

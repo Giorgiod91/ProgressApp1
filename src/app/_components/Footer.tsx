@@ -1,10 +1,8 @@
 import React from "react";
 
-interface Props {}
-
-function Footer({}: Props) {
+function Footer() {
   return (
-    <footer className="bg-neutral p-10 text-neutral-content">
+    <footer className="max-w-screen-2xl bg-neutral p-10 text-neutral-content">
       <div className="container mx-auto flex flex-col justify-between md:flex-row">
         <aside className="mb-6 md:mb-0">
           <p className="text-lg font-bold">
