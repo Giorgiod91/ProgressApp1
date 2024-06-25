@@ -9,7 +9,7 @@ type Props = {
 
 function Card({ initialTask = "Task" }: Props) {
   const triggerConfetti = () => {
-    confetti();
+    void confetti();
   };
 
   const [task, setTask] = useState(initialTask);
