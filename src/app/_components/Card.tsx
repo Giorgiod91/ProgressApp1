@@ -110,9 +110,9 @@ function Card({ initialTask = "Task" }: Props) {
           <button
             onClick={handleClickButton1}
             disabled={button1Disabled}
-            className={`animate-appearFromRight h-[80px] w-[300px] bg-[#FFE8C8] font-serif text-2xl  shadow-lg transition duration-200 hover:translate-x-3 hover:bg-[#F3F7EC] ${
+            className={`h-[80px] w-[300px] bg-[#FFE8C8] font-serif text-2xl shadow-lg transition duration-200 hover:translate-x-3 hover:bg-[#F3F7EC] ${
               button1Clicked
-                ? "tex-white bg-gradient-to-tr  from-red-500 to-pink-500 text-white"
+                ? "bg-gradient-to-tr from-red-500 to-pink-500 text-white"
                 : "text-black"
             }`}
           >
@@ -122,9 +122,9 @@ function Card({ initialTask = "Task" }: Props) {
           <button
             onClick={handleClickButton2}
             disabled={button2Disabled}
-            className={`animate-appearFromRight h-[80px] w-[300px] bg-[#FFE8C8] font-serif text-2xl  shadow-lg transition duration-200 hover:translate-x-3 hover:bg-[#F3F7EC] ${
+            className={`h-[80px] w-[300px] bg-[#FFE8C8] font-serif text-2xl shadow-lg transition duration-200 hover:translate-x-3 hover:bg-[#F3F7EC] ${
               button2Clicked
-                ? "tex-white bg-gradient-to-tr  from-red-500 to-pink-500 text-white"
+                ? "bg-gradient-to-tr from-red-500 to-pink-500 text-white"
                 : "text-black"
             }`}
           >
@@ -133,7 +133,7 @@ function Card({ initialTask = "Task" }: Props) {
           <button
             onClick={handleClickButton3}
             disabled={button3Disabled}
-            className={`animate-appearFromRight h-[80px] w-[300px] bg-[#FFE8C8] font-serif text-2xl shadow-lg transition duration-200 hover:translate-x-3 hover:bg-[#F3F7EC] ${
+            className={`h-[80px] w-[300px] bg-[#FFE8C8] font-serif text-2xl shadow-lg transition duration-200 hover:translate-x-3 hover:bg-[#F3F7EC] ${
               button3Clicked
                 ? "bg-gradient-to-tr from-red-500 to-pink-500 text-white"
                 : "text-black"
