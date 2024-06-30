@@ -2,7 +2,6 @@ import { access, link } from "fs";
 import React from "react";
 import { getServerAuthSession } from "~/server/auth";
 
-const session = await getServerAuthSession();
 export const plans = [
   {
     link:
