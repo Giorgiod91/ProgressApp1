@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { api } from "~/trpc/react";
 import Card from "./Card";
-import { revalidatePath } from "next/cache";
 
 const TaskComponent = () => {
   const [title, setTitle] = useState("");
@@ -18,40 +17,29 @@ const TaskComponent = () => {
     try {
       await createTaskMutation.mutateAsync({ title });
       setTitle("");
-      // Revalidate the task.getAll query to refretch the data
-
-      // Handle success, e.g., refetch tasks
+      refetchTasks();
     } catch (error) {
       // Handle error
     }
   };
 
-  const createTask = api.task.create.useMutation({
-    onSuccess: () => {
-      void refetchTasks();
-    },
-  });
-  const updateTask = api.task.update.useMutation({
-    onSuccess: () => {
-      void refetchTasks();
-    },
-  });
   const handleUpdateTask = (taskId: number) => {
-    // Example: Assuming completed is true by default when updating a task
-    updateTask.mutate({ taskId: taskId.toString(), completed: true });
+    updateTaskMutation.mutate({
+      taskId: taskId.toString(),
+      completed: true,
+    });
   };
+
   const handleToggleTask = async (
     taskId: number,
     currentCompleted: boolean,
   ) => {
     try {
-      // Convert taskId to a string before passing it to the mutation
       await updateTaskMutation.mutateAsync({
         taskId: taskId.toString(),
         completed: !currentCompleted,
       });
-
-      // Handle success, e.g., refetch tasks if needed
+      refetchTasks();
     } catch (error) {
       // Handle error
     }
@@ -59,11 +47,8 @@ const TaskComponent = () => {
 
   if (isLoading) return <div>Loading... No Access need to be logged in !</div>;
 
-  //<li key={task.id}>{task.title}</li>)}
-
-  //TODO: Add a weekly tracker connected to the databse to track the number of tasks completed in a week and display it in the UI maybe in a progress bar
   return (
-    <div className="flex max-w-screen-2xl flex-col ">
+    <div className="flex max-w-screen-2xl flex-col">
       <div className="mb-6 w-full max-w-2xl">
         <h1 className="mb-4 text-center text-3xl font-bold text-gray-800">
           Habit Tracker
@@ -76,17 +61,13 @@ const TaskComponent = () => {
             placeholder="Enter task title"
             className="w-full rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button
-            onClick={(e) => createTask.mutate({ title: e.currentTarget.value })}
-            className="btn btn-primary"
-          >
+          <button onClick={handleCreateTask} className="btn btn-primary">
             Create Task
           </button>
-
           <h2>weekly tracker</h2>
         </div>
       </div>
-      <div className=" flex flex-col gap-4 ">
+      <div className="flex flex-col gap-4">
         {tasks
           ?.filter((task) => !task.completed)
           .map((task) => (
