@@ -17,17 +17,28 @@ const TaskComponent = () => {
     try {
       await createTaskMutation.mutateAsync({ title });
       setTitle("");
-      refetchTasks();
+      await refetchTasks();
     } catch (error) {
       // Handle error
+      console.error("Error creating task:", error);
     }
   };
 
   const handleUpdateTask = (taskId: number) => {
-    updateTaskMutation.mutate({
-      taskId: taskId.toString(),
-      completed: true,
-    });
+    updateTaskMutation.mutate(
+      {
+        taskId: taskId.toString(),
+        completed: true,
+      },
+      {
+        onError: (error) => {
+          console.error("Error updating task:", error);
+        },
+        onSuccess: () => {
+          void refetchTasks(); // Using void to suppress the promise warning
+        },
+      },
+    );
   };
 
   const handleToggleTask = async (
@@ -39,9 +50,10 @@ const TaskComponent = () => {
         taskId: taskId.toString(),
         completed: !currentCompleted,
       });
-      refetchTasks();
+      await refetchTasks();
     } catch (error) {
       // Handle error
+      console.error("Error toggling task:", error);
     }
   };
 
