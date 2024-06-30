@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { api } from "~/trpc/react";
 import Card from "./Card";
 
 const TaskComponent = () => {
-  const [title, setTitle] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const {
     data: tasks,
     isLoading,
@@ -13,11 +14,16 @@ const TaskComponent = () => {
   const createTaskMutation = api.task.create.useMutation();
   const updateTaskMutation = api.task.update.useMutation();
 
-  const handleCreateTask = async () => {
+  // function to create a new task with the title provided in the input field
+
+  const createTask = async () => {
     try {
-      await createTaskMutation.mutateAsync({ title });
-      setTitle("");
-      await refetchTasks();
+      const title = inputRef.current?.value; // Add null check using optional chaining
+      if (title) {
+        await createTaskMutation.mutateAsync({ title });
+        inputRef.current.value = "";
+        await refetchTasks();
+      }
     } catch (error) {
       // Handle error
       console.error("Error creating task:", error);
@@ -52,12 +58,11 @@ const TaskComponent = () => {
         <div className="mb-4 flex items-center justify-center gap-4">
           <input
             type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            ref={inputRef}
             placeholder="Enter task title"
             className="w-full rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button onClick={handleCreateTask} className="btn btn-primary">
+          <button onClick={createTask} className="btn btn-primary">
             Create Task
           </button>
           <h2>weekly tracker</h2>
