@@ -13,8 +13,6 @@ import Test1 from "./_components/Test1";
 import TaskComponent from "./_components/Test1";
 
 export default async function Home() {
-  const session = await getServerAuthSession();
-
   return (
     <main className="flex min-h-screen flex-col scroll-smooth">
       <Navbar />
@@ -33,20 +31,14 @@ export default async function Home() {
       <section className=" " id="demo">
         <Demo />
       </section>
-      {session ? (
-        <section
-          data-theme="light"
-          className=" flex h-screen
+
+      <section
+        data-theme="light"
+        className=" flex h-screen
           w-full justify-center"
-        >
-          {" "}
-        </section>
-      ) : (
-        <div className="h-screen bg-white">
-          {" "}
-          Member Area Need to be logged In
-        </div>
-      )}
+      >
+        <TaskComponent />
+      </section>
 
       <section
         id="payment"
