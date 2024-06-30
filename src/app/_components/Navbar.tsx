@@ -3,7 +3,6 @@ import React from "react";
 import { getServerAuthSession } from "~/server/auth";
 
 export default async function Navbar() {
-  const session = await getServerAuthSession();
   return (
     <div className="navbar mx-auto max-w-screen-2xl">
       <div className="navbar-start">
@@ -64,17 +63,7 @@ export default async function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <p className="text-center text-2xl text-gray-800">
-          {session && <span>Logged in as {session.user?.name}</span>}
-        </p>
-        <Link
-          href={session ? "/api/auth/signout" : "/api/auth/signin"}
-          className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black"
-        >
-          {session ? "Sign out" : "Sign in"}
-        </Link>
-      </div>
+      <div className="navbar-end"></div>
     </div>
   );
 }
