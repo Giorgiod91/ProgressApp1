@@ -33,13 +33,21 @@ export default async function Home() {
       <section className=" " id="demo">
         <Demo />
       </section>
-      <section
-        data-theme="light"
-        className=" flex h-screen w-full justify-center"
-      >
-        {" "}
-        <Test1 />
-      </section>
+      {session ? (
+        <section
+          data-theme="light"
+          className=" flex h-screen
+          w-full justify-center"
+        >
+          {" "}
+        </section>
+      ) : (
+        <div className="h-screen bg-white">
+          {" "}
+          Member Area Need to be logged In
+        </div>
+      )}
+
       <section
         id="payment"
         className="flex min-h-screen items-center justify-center"
