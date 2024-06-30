@@ -41,22 +41,6 @@ const TaskComponent = () => {
     );
   };
 
-  const handleToggleTask = async (
-    taskId: number,
-    currentCompleted: boolean,
-  ) => {
-    try {
-      await updateTaskMutation.mutateAsync({
-        taskId: taskId.toString(),
-        completed: !currentCompleted,
-      });
-      await refetchTasks();
-    } catch (error) {
-      // Handle error
-      console.error("Error toggling task:", error);
-    }
-  };
-
   if (isLoading) return <div>Loading... No Access need to be logged in !</div>;
 
   return (

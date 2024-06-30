@@ -10,6 +10,7 @@ import Payment from "./_components/Payment";
 import Demo from "./_components/Demo";
 import Footer from "./_components/Footer";
 import Test1 from "./_components/Test1";
+import TaskComponent from "./_components/Test1";
 
 export default async function Home() {
   const session = await getServerAuthSession();
