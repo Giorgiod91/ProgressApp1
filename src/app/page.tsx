@@ -1,19 +1,15 @@
 import Link from "next/link";
-
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
-
 import Motivate1 from "~/app/_components/Motivate1";
 import Banner2 from "~/app/_components/Banner2";
-
 import Banner1 from "~/app/_components/Banner1";
 import Navbar from "~/app/_components/Navbar";
 import LandingPage from "./_components/LandingPage";
-
-import Test1 from "./_components/Test1";
 import Payment from "./_components/Payment";
 import Demo from "./_components/Demo";
 import Footer from "./_components/Footer";
+import Test1 from "./_components/Test1";
 
 export default async function Home() {
   const session = await getServerAuthSession();

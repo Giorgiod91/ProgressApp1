@@ -1,11 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import { api } from "~/trpc/react"; // Stelle sicher, dass du den API-Client korrekt importierst
+import { api } from "~/trpc/react";
 import Card from "./Card";
+import { revalidatePath } from "next/cache";
 
 const TaskComponent = () => {
   const [title, setTitle] = useState("");
-  const { data: tasks, isLoading } = api.task.getAll.useQuery();
+  const {
+    data: tasks,
+    isLoading,
+    refetch: refetchTasks,
+  } = api.task.getAll.useQuery();
   const createTaskMutation = api.task.create.useMutation();
   const updateTaskMutation = api.task.update.useMutation();
 
@@ -13,12 +18,28 @@ const TaskComponent = () => {
     try {
       await createTaskMutation.mutateAsync({ title });
       setTitle("");
+      // Revalidate the task.getAll query to refretch the data
+
       // Handle success, e.g., refetch tasks
     } catch (error) {
       // Handle error
     }
   };
 
+  const createTask = api.task.create.useMutation({
+    onSuccess: () => {
+      void refetchTasks();
+    },
+  });
+  const updateTask = api.task.update.useMutation({
+    onSuccess: () => {
+      void refetchTasks();
+    },
+  });
+  const handleUpdateTask = (taskId: number) => {
+    // Example: Assuming completed is true by default when updating a task
+    updateTask.mutate({ taskId: taskId.toString(), completed: true });
+  };
   const handleToggleTask = async (
     taskId: number,
     currentCompleted: boolean,
@@ -29,6 +50,7 @@ const TaskComponent = () => {
         taskId: taskId.toString(),
         completed: !currentCompleted,
       });
+
       // Handle success, e.g., refetch tasks if needed
     } catch (error) {
       // Handle error
@@ -54,7 +76,10 @@ const TaskComponent = () => {
             placeholder="Enter task title"
             className="w-full rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button onClick={handleCreateTask} className="btn btn-primary">
+          <button
+            onClick={(e) => createTask.mutate({ title: e.currentTarget.value })}
+            className="btn btn-primary"
+          >
             Create Task
           </button>
 
@@ -72,7 +97,7 @@ const TaskComponent = () => {
               <Card initialTask={task.title} />
               <button
                 className="mt-2 rounded-md border border-gray-400 bg-green-500 px-4 py-2 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                onClick={() => handleToggleTask(task.id, task.completed)}
+                onClick={() => handleUpdateTask(task.id)}
               >
                 {task.completed ? "Mark as Incomplete" : "Mark as Complete"}
               </button>
