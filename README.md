@@ -17,6 +17,7 @@ This project is built with a modern web development stack, including:
 - **Prisma**: As an ORM for database management.
 - **Supabase**: For backend services and database hosting.
 - **tRPC**: For end-to-end type-safe APIs.
+- **Next-Auth**: for secure and easy user management.
 
 ## Key Learnings
 
