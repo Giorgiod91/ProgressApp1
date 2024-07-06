@@ -13,6 +13,7 @@ import Test1 from "./_components/Test1";
 import TaskComponent from "./_components/Test1";
 
 export default async function Home() {
+  const session = await getServerAuthSession();
   return (
     <main className="flex min-h-screen flex-col scroll-smooth">
       <Navbar />
@@ -37,7 +38,7 @@ export default async function Home() {
         className=" flex h-screen
           w-full justify-center"
       >
-        <TaskComponent />
+        {session ? <TaskComponent /> : <div> whopa</div>}
       </section>
 
       <section

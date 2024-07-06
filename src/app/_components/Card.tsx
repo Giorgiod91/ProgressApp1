@@ -80,7 +80,7 @@ function Card({ initialTask = "Task" }: Props) {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="card card-side bg-base-300 shadow-xl"
+      className="card card-side bg-base-300 shadow-xl "
     >
       <figure>
         <img

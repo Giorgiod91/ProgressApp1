@@ -3,6 +3,7 @@ import React from "react";
 import { getServerAuthSession } from "~/server/auth";
 
 export default async function Navbar() {
+  const session = await getServerAuthSession();
   return (
     <div className="navbar mx-auto max-w-screen-2xl">
       <div className="navbar-start">
@@ -63,7 +64,29 @@ export default async function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="navbar-end"></div>
+      <div className="navbar-end">
+        {session ? (
+          <button className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black">
+            <a
+              href="/api/auth/signin"
+              className="btn btn-wide flex items-center bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black"
+            >
+              <img src="./logo2.jpg" className="w-5" alt="applogo" />
+              <span className="ml-2">Sign Out</span>
+            </a>
+          </button>
+        ) : (
+          <button className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black">
+            <a
+              href="/api/auth/signin"
+              className="btn btn-wide flex items-center bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black"
+            >
+              <img src="./logo2.jpg" className="w-5" alt="applogo" />
+              <span className="ml-2">Sign In</span>
+            </a>
+          </button>
+        )}
+      </div>
     </div>
   );
 }
