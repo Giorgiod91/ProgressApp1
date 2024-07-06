@@ -1,29 +1,28 @@
-# Create T3 App
+# Progress App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+![Screenshot](https://github.com/Giorgiod91/ProgressApp1/assets/109972616/b9852b9c-03cd-4fe1-b09a-7992f3c4bd3e)
 
-## What's next? How do I make an app with this?
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Overview
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Welcome to the **Progress App**! This application is built to help you track and manage your progress efficiently. 
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+You can check it out live [here](https://progress-app1.vercel.app/).
 
-## Learn More
+## Tech Stack
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+This project is built with a modern web development stack, including:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- **TypeScript**: For type-safe JavaScript.
+- **Tailwind CSS**: For fast and flexible styling.
+- **Prisma**: As an ORM for database management.
+- **Supabase**: For backend services and database hosting.
+- **tRPC**: For end-to-end type-safe APIs.
+- **Next-Auth**: for secure and easy user management.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Key Learnings
 
-## How do I deploy this?
+During the development of this app, I gained valuable insights into:
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- **tRPC**: Understanding the full capabilities of tRPC for creating type-safe API routes.
+- **Prisma**: Deepening my knowledge of Prisma ORM for database interactions.
