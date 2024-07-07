@@ -1,6 +1,6 @@
 # Progress App
 
-![Screenshot](https://github.com/Giorgiod91/ProgressApp1/assets/109972616/b9852b9c-03cd-4fe1-b09a-7992f3c4bd3e)
+![Screenshot](https://github.com/Giorgiod91/ProgressApp1/assets/109972616/bbab7239-89d5-4812-9765-c9c8140bb70e)
 
 
 ## Overview
