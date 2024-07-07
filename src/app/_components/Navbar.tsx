@@ -5,7 +5,7 @@ import { getServerAuthSession } from "~/server/auth";
 export default async function Navbar() {
   const session = await getServerAuthSession();
   return (
-    <div className="navbar mx-auto max-w-screen-2xl">
+    <div className="navbar mx-auto max-w-screen-2xl ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,7 +42,7 @@ export default async function Navbar() {
         <img className="w-12" src="./logo2.jpg" alt="logo" />
         <a className="btn btn-ghost text-xl tracking-tight text-transparent">
           <span className="flex">
-            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text">
+            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text  text-red-500 hover:from-blue-500 hover:to-cyan-400 hover:text-white">
               PrOgre
             </span>
             <span className="text-white">SS</span>
@@ -52,13 +52,13 @@ export default async function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a href="#demo" className="link-hover link">
+            <a href="#demo" className="hover:text-white">
               Features
             </a>
           </li>
           <li></li>
           <li>
-            <a href="#payment" className="link-hover link">
+            <a href="#payment" className="hover:text-white">
               Pricing
             </a>
           </li>
@@ -66,20 +66,20 @@ export default async function Navbar() {
       </div>
       <div className="navbar-end">
         {session ? (
-          <button className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black">
+          <button className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:to-cyan-400 hover:text-black">
             <a
               href="/api/auth/signin"
-              className="btn btn-wide flex items-center bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black"
+              className="btn btn-wide flex items-center bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:to-cyan-400 hover:text-black"
             >
               <img src="./logo2.jpg" className="w-5" alt="applogo" />
               <span className="ml-2">Sign Out</span>
             </a>
           </button>
         ) : (
-          <button className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black">
+          <button className="via-magenta-500 btn btn-wide bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:to-cyan-400 hover:text-black">
             <a
               href="/api/auth/signin"
-              className="btn btn-wide flex items-center bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:via-blue-300 hover:to-cyan-400 hover:text-black"
+              className="btn btn-wide flex items-center bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:to-cyan-400 hover:text-black"
             >
               <img src="./logo2.jpg" className="w-5" alt="applogo" />
               <span className="ml-2">Sign In</span>

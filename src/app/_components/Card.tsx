@@ -54,6 +54,9 @@ function Card({ initialTask = "Task" }: Props) {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTask(event.target.value);
   };
+  const hoverVariants = {
+    whileHover: { scale: 1.2 },
+  };
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -80,7 +83,7 @@ function Card({ initialTask = "Task" }: Props) {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="card card-side bg-base-300 shadow-xl "
+      className="card card-side bg-base-300 shadow-xl  "
     >
       <figure>
         <img

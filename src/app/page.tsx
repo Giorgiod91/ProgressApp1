@@ -11,6 +11,7 @@ import Demo from "./_components/Demo";
 import Footer from "./_components/Footer";
 import Test1 from "./_components/Test1";
 import TaskComponent from "./_components/Test1";
+import Test2 from "./_components/Test2";
 
 export default async function Home() {
   const session = await getServerAuthSession();
@@ -38,7 +39,7 @@ export default async function Home() {
         className=" flex h-screen
           w-full justify-center"
       >
-        {session ? <TaskComponent /> : <div> whopa</div>}
+        {session ? <TaskComponent /> : <Test2 />}
       </section>
 
       <section
