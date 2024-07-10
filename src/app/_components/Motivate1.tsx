@@ -17,13 +17,7 @@ function Motivate1() {
 
         <div></div>
       </div>
-      <div className="relative mx-auto w-full max-w-3xl">
-        <p className="text-lg leading-relaxed opacity-80">
-          {" "}
-          Track your progress and motivate yourself to achieve your goals or
-          whatever you aim to achieve
-        </p>
-      </div>
+      <div className="relative mx-auto w-full max-w-3xl"></div>
     </div>
   );
 }

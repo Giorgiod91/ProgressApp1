@@ -2,10 +2,10 @@ import React from "react";
 
 function Demo() {
   return (
-    <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-16 space-x-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 px-6 pb-10 pt-24 text-white sm:px-8 sm:pt-28 lg:flex-row lg:gap-20 lg:pb-20">
+    <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-16 space-x-6  px-6 pb-10 pt-24 text-white sm:px-8 sm:pt-28 lg:flex-row lg:gap-20 lg:pb-20">
       <div className="mx-auto flex max-w-lg flex-col items-center justify-center gap-10 text-center sm:justify-between lg:items-start lg:gap-14 lg:text-left">
         <video
-          className="w-full rounded-3xl border-2 border-base-content md:border-4 "
+          className="w-full rounded-3xl border-2 border-base-content md:border-4"
           autoPlay
           loop
           muted
@@ -29,6 +29,11 @@ function Demo() {
         <h1 className="text-5xl font-extrabold tracking-tight text-slate-100 md:-mb-4 lg:text-6xl xl:text-7xl">
           Add new tasks and mark them as complete
         </h1>
+        <p className="mt-4 text-lg leading-relaxed opacity-80">
+          This demo version allows you to create and manage tasks locally. The
+          full version of the app includes user authentication and persistent
+          data storage using Supabase.
+        </p>
       </div>
     </div>
   );

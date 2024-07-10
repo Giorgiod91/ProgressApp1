@@ -57,7 +57,10 @@ const TaskComponent = () => {
             placeholder="Enter task title"
             className="w-full rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button onClick={handleCreateTask} className="btn btn-primary">
+          <button
+            onClick={handleCreateTask}
+            className="btn btn-wide flex items-center rounded-md bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-blue-500 hover:to-cyan-400 hover:text-black"
+          >
             Create Task
           </button>
           <h2>weekly tracker</h2>

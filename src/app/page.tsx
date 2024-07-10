@@ -35,9 +35,8 @@ export default async function Home() {
       </section>
 
       <section
-        data-theme="light"
-        className=" flex h-screen
-          w-full justify-center"
+        className=" flex h-screen w-full
+          justify-center  bg-gray-100 "
       >
         {session ? <TaskComponent /> : <Test2 />}
       </section>

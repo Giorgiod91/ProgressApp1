@@ -35,7 +35,7 @@ export const plans = [
 function Payment() {
   return (
     <div className="mx-auto max-w-7xl px-8 py-24">
-      <div className="mb-20 flex w-full flex-col  text-center">
+      <div className="mb-20 flex w-full flex-col text-center">
         <h1 className="mb-8 text-5xl font-extrabold tracking-tight text-slate-100 md:-mb-4 lg:text-6xl xl:text-7xl">
           Unlock Your Potential with Our Premium Plans
         </h1>
@@ -46,8 +46,8 @@ function Payment() {
             key={plan.priceId}
             className={`relative z-10 flex flex-col gap-5 rounded-lg bg-base-100 p-8 lg:gap-8 ${
               plan.name === "Pro"
-                ? "border-white bg-gradient-to-r from-red-500 to-pink-400"
-                : "border-black bg-gradient-to-r from-blue-500 to-cyan-400"
+                ? "border border-white bg-gradient-to-r from-red-500 to-pink-500"
+                : "border border-gray-400 bg-gray-800"
             }`}
           >
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 transform rounded-lg bg-white px-2 py-1 text-black shadow-lg">
