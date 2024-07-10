@@ -32,7 +32,9 @@ export default async function Navbar() {
               <a href="#demo">Demo</a>
             </li>
             <li>
-              <a href="#payment">Pricing</a>
+              <a className="" href="#payment">
+                Pricing
+              </a>
             </li>
             <li>
               <a>about</a>
@@ -52,13 +54,19 @@ export default async function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a href="#demo" className="hover:text-white">
+            <a
+              href="#demo"
+              className="from-red-500 to-pink-500 text-xl font-black text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400"
+            >
               Features
             </a>
           </li>
           <li></li>
           <li>
-            <a href="#payment" className="hover:text-white">
+            <a
+              href="#payment"
+              className="from-red-500 to-pink-500 text-xl font-black text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400"
+            >
               Pricing
             </a>
           </li>
