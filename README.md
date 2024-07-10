@@ -1,13 +1,18 @@
 # Progress App
 
-![Screenshot](https://github.com/Giorgiod91/ProgressApp1/assets/109972616/bbab7239-89d5-4812-9765-c9c8140bb70e)
+![image](https://github.com/Giorgiod91/ProgressApp1/assets/109972616/3fe63ea7-f37d-4e47-856a-6b498f6ea56d)
+
+
 
 
 ## Overview
 
-Welcome to the **Progress App**! This application is built to help you track and manage your progress efficiently. 
+This app allows users to track their habits, create new tasks, and mark them as complete. It is designed to help users stay motivated and organized.
 
 You can check it out live [here](https://progress-app1.vercel.app/).
+
+### Demo Version
+For demonstration purposes, the demo version allows you to create and manage tasks locally without needing to log in. This is to simplify the review process for recruiters and others who want to quickly see the app in action without the need for authentication.
 
 ## Tech Stack
 
