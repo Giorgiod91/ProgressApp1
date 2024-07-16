@@ -44,7 +44,7 @@ function Payment() {
         {plans.map((plan) => (
           <div
             key={plan.priceId}
-            className={`relative z-10 flex flex-col gap-5 rounded-lg bg-base-100 p-8 lg:gap-8 ${
+            className={`relative z-10 flex flex-col gap-5 rounded-lg bg-base-100 p-8 lg:gap-1 ${
               plan.name === "Pro"
                 ? "border border-white bg-gradient-to-r from-red-500 to-pink-500"
                 : "border border-gray-400 bg-gray-800"
@@ -53,8 +53,12 @@ function Payment() {
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 transform rounded-lg bg-white px-2 py-1 text-black shadow-lg">
               {plan.name}
             </div>
-            <h2 className="text-2xl font-semibold text-white">{plan.name}</h2>
-            <h2 className="text-4xl font-semibold text-white">${plan.price}</h2>
+            <h2 className="p-5 text-2xl font-semibold text-white">
+              {plan.name}
+            </h2>
+            <h2 className="p-5 text-4xl font-semibold text-white">
+              ${plan.price}
+            </h2>
             <ul className="flex flex-col p-5 text-white">
               <li>✔️ Access to all features</li>
               <li>✔️ Unlimited tasks</li>
